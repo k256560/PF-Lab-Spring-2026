@@ -1,0 +1,73 @@
+#include <stdio.h>
+ #include <math.h> 
+ int main() { 
+ int choice; 
+ double x, y; 
+ printf("\n-------- SCIENTIFIC CALCULATOR ---\n");  
+printf("1. Addition\n"); 
+ printf("2. Subtraction\n"); 
+ printf("3. Multiplication\n"); 
+ printf("4. Division\n"); 
+ printf("5. Square \n"); 
+ printf("6. Cube \n"); 
+ printf("7. Square Root \n"); 
+ printf("8. Power (x^y)\n"); 
+ printf("9. Absolute Value\n"); 
+printf("Enter your choice: "); 
+scanf("%d", &choice); 
+switch (choice) { 
+case 1: 
+printf("Enter two numbers: "); 
+scanf("%lf %lf", &x, &y); 
+printf("Result = %.2lf\n", x + y); 
+break; 
+case 2: 
+printf("Enter two numbers: "); 
+scanf("%lf %lf", &x, &y); 
+printf("Result = %.2lf\n", x - y); 
+break; 
+case 3: 
+printf("Enter two numbers: "); 
+scanf("%lf %lf", &x, &y); 
+printf("Result = %.2lf\n", x * y); 
+break; 
+case 4: 
+printf("Enter two numbers: "); 
+scanf("%lf %lf", &x, &y); 
+if (y == 0) 
+printf("Error: Division by zero is not allowed.\n"); 
+else 
+printf("Result = %.2lf\n", x / y); 
+break; 
+case 5: 
+printf("Enter a number: "); 
+scanf("%lf", &x); 
+printf("Square = %.2lf\n", x * x); 
+break; 
+case 6: 
+printf("Enter a number: "); 
+scanf("%lf", &x); 
+printf("Cube = %.2lf\n", x * x * x); 
+break; 
+case 7: 
+printf("Enter a number: "); 
+scanf("%lf", &x); 
+if (x < 0) 
+printf("Error: Cannot find square root of a negative number.\n"); 
+else 
+printf("Square Root = %.2lf\n", sqrt(x)); 
+break; 
+case 8: 
+printf("Enter base and exponent: "); 
+scanf("%lf %lf", &x, &y); 
+printf("Result = %.2lf\n", pow(x, y)); 
+break; 
+case 9: 
+printf("Enter a number: "); 
+scanf("%lf", &x); 
+printf("Absolute Value = %.2lf\n", fabs(x)); 
+break; 
+default:printf("Invalid choice\n"); 
+} 
+return 0; 
+} 
