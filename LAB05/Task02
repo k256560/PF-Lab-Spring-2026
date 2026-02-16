@@ -1,0 +1,33 @@
+#include<stdio.h>
+int main()
+{
+	int units;
+	int customertype;
+	float bill=0;
+	printf("Enter units consumed: ");
+	scanf("%d",&units);
+	if(units<=100){
+		bill=units*10;
+		
+	}
+	else if(units>100&&units<=300){
+	printf("------CUSTOMER TYPE-----\n");
+	printf("1.Domestic\n");
+	printf("2.Commercial\n");
+	printf("enter customertype(1-2): ");
+	scanf("%d",&customertype);
+	if(customertype==1){
+		bill=units*12;
+		
+	}
+	else{
+		bill=units*15;
+	
+	}}
+	else {
+		bill=units*20;
+	
+	}
+	printf("total bill is =Rs.%2lf\n",bill);
+	return 0;
+}
