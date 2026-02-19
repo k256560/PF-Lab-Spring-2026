@@ -1,0 +1,30 @@
+#include <stdio.h> 
+int main() { 
+    int username, password, otp;
+    int correctUsername = 1111; 
+    int correctPassword = 2222; 
+    int correctOTP = 3333; 
+    printf("Enter Username (numbers only): "); 
+    scanf("%d", &username); 
+    printf("Enter Password (numbers only): "); 
+    scanf("%d", &password); 
+    printf("Enter OTP (numbers only): "); 
+    scanf("%d", &otp); 
+    if (username == correctUsername) { 
+        if (password == correctPassword) { 
+            if (otp == correctOTP) { 
+                printf("Login Successful\n"); 
+            } 
+            else { 
+                printf("Invalid OTP\n"); 
+            } 
+        } 
+        else {
+            printf("Incorrect Password\n"); 
+        } 
+    } 
+    else { 
+        printf("Invalid Username\n"); 
+    } 
+    return 0; 
+} 
