@@ -1,0 +1,13 @@
+#include <stdio.h> 
+int main()  
+{ 
+    int N; 
+    int TotalRevenue = 0; 
+    printf("Enter number of tickets: "); 
+    scanf("%d", &N); 
+    for(int i = 1; i <= N; i++) { 
+        TotalRevenue += i * 100; 
+    } 
+    printf("Total Revenue: $%d\n", TotalRevenue); 
+    return 0; 
+} 
