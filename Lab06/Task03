@@ -1,0 +1,14 @@
+#include <stdio.h> 
+int main() { 
+    int code; 
+    int correctCode = 2468; 
+    do { 
+        printf("Enter code: "); 
+        scanf("%d", &code); 
+        if(code != correctCode) { 
+            printf("Incorrect Code. Try Again.\n"); 
+        } 
+    } while(code!=correctCode); 
+    printf("Access Granted.\n"); 
+    return 0; 
+} 
