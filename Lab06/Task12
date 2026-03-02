@@ -1,0 +1,18 @@
+#include <stdio.h> 
+int main() { 
+    int spaces = 50; 
+    int input = 1; 
+    while(spaces > 0 && input != 0) { 
+        printf("Car arriving? (1 = Yes, 0 = Stop): "); 
+        scanf("%d", &input); 
+        if(input == 1) { 
+            spaces--; 
+            printf("Car Parked. Remaining Spaces: %d\n", spaces); 
+        } 
+    } 
+    if(spaces == 0) 
+        printf("Parking Lot Full.\n"); 
+    else 
+        printf("Parking Closed.\n"); 
+    return 0; 
+} 
