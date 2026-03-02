@@ -1,0 +1,14 @@
+#include <stdio.h> 
+int main()  
+{ 
+    int pin; 
+    int correctPin = 5555; 
+    printf("Enter PIN: "); 
+    scanf("%d", &pin); 
+    while(pin != correctPin) { 
+        printf("Incorrect PIN. Try Again: "); 
+        scanf("%d", &pin); 
+    } 
+    printf("Access Granted.\n"); 
+    return 0; 
+} 
