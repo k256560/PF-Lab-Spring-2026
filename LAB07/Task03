@@ -1,1 +1,29 @@
-
+#include <stdio.h>
+int main() {
+    int pass[10], fail[10],marks;
+    int passcount = 0, failcount = 0, i;
+    float passsum = 0, failsum = 0;
+    printf("Enter marks (0-10) or -1 to exit:\n");
+    while (passcount + failcount < 10) {
+        scanf("%d", &marks);
+        if (marks == -1) {
+        break;}
+        if (marks >= 5 && marks <= 10) {
+            pass[passcount++] = marks;
+            passsum += marks;
+        } 
+        else if (marks >= 0 && marks < 5) {
+            fail[failcount++] = marks;
+            failsum += marks;
+        }
+    }
+    printf("\nPassing Marks: ");
+    for(i = 0; i < passcount; i++) {
+    printf("%d ", pass[i]);}
+    printf("\nAverage Passing marks: %.2f", passcount ? passsum/passcount :0);
+    printf("\nFailing Marks: ");
+    for(i = 0; i < failcount; i++){
+    printf("%d ", fail[i]);}
+    printf("\nAverage Fail: %.2f\n", failcount ? failsum/failcount :0);
+    return 0;
+}
