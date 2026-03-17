@@ -1,0 +1,18 @@
+#include <stdio.h> 
+int main() { 
+    int marks[4][3] = {{80, 75, 90}, {60, 70, 85}, {88, 92, 79}, {55, 65, 70}}; 
+    float subjsum[3] = {0}; 
+    for(int i = 0; i < 4; i++)  
+    { 
+        int total = 0;
+        for(int j = 0; j < 3; j++)  
+        { 
+            total += marks[i][j]; 
+            subjsum[j] += marks[i][j]; 
+        } 
+        printf("Student %d Total Marks: %d\n", i + 1, total); 
+    } 
+    for(int j = 0; j < 3; j++) 
+        printf("Subject %d Average Marks: %.2f\n", j + 1, subjsum[j] / 4.0); 
+    return 0; 
+} 
