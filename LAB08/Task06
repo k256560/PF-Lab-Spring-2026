@@ -1,0 +1,36 @@
+#include <stdio.h> 
+int main() { 
+    int a[3][3], b[3][3], reset[3][3]={0}, r1, c1, r2, c2; 
+    printf("Enter dimensions for matrix A: "); 
+    scanf("%d %d", &r1, &c1); 
+    printf("Enter dimensions for matrix B: "); 
+    scanf("%d %d", &r2, &c2); 
+    if(c1 != r2) {  
+        printf("Invalid Dimensions!\n"); 
+        return 1;
+    } 
+    printf("Enter elements for Matrix A:\n"); 
+    for(int i=0; i<r1; i++){ 
+        for(int j=0; j<c1; j++){  
+        scanf("%d", &a[i][j]);}} 
+    printf("Enter elements for Matrix B:\n"); 
+    for(int i=0; i<r2; i++){ 
+        for(int j=0; j<c2; j++){ 
+        scanf("%d", &b[i][j]);}} 
+    for(int i=0; i<r1; i++) { 
+        for(int j=0; j<c2; j++) { 
+            for(int k=0; k<c1; k++) { 
+                reset[i][j] += a[i][k] * b[k][j]; 
+            } 
+        } 
+    } 
+    printf("\n--- Resultant Matrix ---\n");
+    for(int i=0; i<r1; i++) { 
+        for(int j=0; j<c2; j++) { 
+            printf("%d ", reset[i][j]); 
+        } 
+        printf("\n"); 
+    } 
+     return 0; 
+
+} 
