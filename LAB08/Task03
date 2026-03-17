@@ -1,0 +1,21 @@
+#include <stdio.h> 
+int main() { 
+    float temperature[7][3] = { 
+        {21.0, 30.5, 22.0}, {19.5, 28.0, 20.1}, {22.1, 31.0, 23.5}, 
+        {20.0, 29.5, 21.0}, {18.9, 27.5, 19.8}, {23.4, 33.0, 25.1}, 
+        {21.5, 30.0, 22.8}}; 
+    float highest = temperature[0][0];  
+    for (int i = 0; i < 7; i++) { 
+        float dailySum = 0; 
+        for (int j = 0; j < 3; j++) { 
+            if (temperature[i][j] > highest) { 
+                highest = temperature[i][j]; 
+            } 
+            dailySum += temperature[i][j]; 
+        } 
+        float average = dailySum / 3.0; 
+        printf("Day %d Average temperature: %.2f\n", i + 1, average); 
+    } 
+    printf("\nHighest Temperature of the Week: %.2f\n", highest); 
+    return 0; 
+} 
