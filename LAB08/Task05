@@ -1,0 +1,62 @@
+#include <stdio.h> 
+int main() { 
+    int row, col, a[5][5]; 
+    int isZero = 1, isDiag = 1, isScalar = 1, isIdentity = 1; 
+    int isUpper = 1, isLower = 1, isSym = 1, isSkew = 1; 
+    printf("Enter Rows/Cols: "); 
+    scanf("%d %d", &row, &col); 
+    printf("Enter elements:"); 
+    for(int i = 0; i < row; i++) { 
+        for(int j = 0; j < col; j++) { 
+            scanf("%d", &a[i][j]); 
+        } 
+    } 
+    for(int i = 0; i < row; i++) { 
+        for(int j = 0; j < col; j++) {
+            if(a[i][j] != 0)  
+            isZero = 0; 
+            if(row == col) { 
+                if(i != j && a[i][j] != 0)  
+                isDiag = 0; 
+                if(i == j && a[i][j] != a[0][0])  
+                isScalar = 0; 
+                if((i == j && a[i][j] != 1) || (i != j && a[i][j] != 0)) isIdentity = 0; 
+                if(i > j && a[i][j] != 0)  
+                isUpper = 0; 
+                if(i < j && a[i][j] != 0)  
+                isLower = 0; 
+                if(a[i][j] != a[j][i])  
+                isSym = 0; 
+                if(a[i][j] != -a[j][i])  
+                isSkew = 0; 
+            } 
+        } 
+    } 
+    if(row == col) 
+    printf("- Square Matrix\n"); 
+    else 
+    printf("- Rectangular Matrix\n"); 
+    if(row == 1)  
+    printf("- Row Matrix\n"); 
+    if(col == 1)  
+    printf("- Column Matrix\n"); 
+    if(isZero)  
+    printf("- Zero / Null Matrix\n"); 
+    if(row == col) { 
+        if(isDiag)  
+        printf("- Diagonal Matrix\n"); 
+        if(isDiag && isScalar)  
+        printf("- Scalar Matrix\n"); 
+        if(isIdentity)  
+        printf("- Identity Matrix\n"); 
+        if(isUpper) 
+        printf("- Upper Triangular\n"); 
+        if(isLower)  
+        printf("- Lower Triangular\n"); 
+        if(isSym)  
+        printf("- Symmetric Matrix\n"); 
+        if(isSkew) printf("- Skew-Symmetric Matrix\n"); 
+    } 
+    return 0; 
+
+} 
