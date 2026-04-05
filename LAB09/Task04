@@ -1,0 +1,19 @@
+#include <stdio.h> 
+int validPIN(int stored, int entered) { 
+    return (stored == entered);  
+} 
+int main() { 
+    int storedPIN = 4729, entered, tries = 3; 
+    for (int i = 1; i <= tries; i++) { 
+        printf("Enter PIN: "); 
+        scanf("%d", &entered); 
+        if (validPIN(storedPIN, entered)) { 
+            printf("Access granted. Welcome!\n"); 
+            return 0; 
+        } else { 
+            printf("Wrong! Remaining attempts: %d\n", tries - i); 
+        } 
+    } 
+    printf("Card blocked. Contact bank.\n"); 
+    return 0; 
+} 
