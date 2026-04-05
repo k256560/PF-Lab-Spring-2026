@@ -1,0 +1,24 @@
+#include <stdio.h> 
+int attack(int hp, int dmg) {  
+    printf("--- Attacking! ---\n"); 
+    return hp - dmg;  
+} 
+int heal(int hp, int dmg) {  
+    printf("--- Healing! ---\n"); 
+    return hp + 20;  
+} 
+int main() { 
+    int hp = 100, dmg = 20, choice; 
+    int (*action)(int, int); 
+    printf("Current HP: %d\n", hp); 
+    printf("Choose Action: 1 for Attack, 2 for Heal: "); 
+    scanf("%d", &choice); 
+    if (choice == 1) { 
+        action = attack; 
+    } else { 
+        action = heal; 
+    } 
+    hp = action(hp, dmg); 
+    printf("Final HP: %d\n", hp); 
+    return 0; 
+} 
