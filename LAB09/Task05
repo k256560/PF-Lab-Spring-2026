@@ -1,0 +1,16 @@
+#include <stdio.h>  
+float MJ(float kwh) {  
+    return kwh * 3.6; }  
+float BTU(float kwh) {  
+    return kwh * 3412.14; }  
+float Calories(float kwh) {  
+    return kwh * 859.845; }  
+int main() {  
+    float kwh;  
+    printf("Enter kWh reading: ");  
+    scanf("%f", &kwh);  
+    printf("MJ: %.2f\n", MJ(kwh));  
+    printf("BTU: %.2f\n", BTU(kwh));  
+    printf("Calories: %.2f\n", Calories(kwh));  
+    return 0;  
+} 
