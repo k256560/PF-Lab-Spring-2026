@@ -1,0 +1,31 @@
+#include <stdio.h> 
+int main() { 
+    char product[50]; 
+    int quantity; 
+    FILE *fptr;
+    fptr = fopen("inventory.txt", "a"); 
+    if (fptr == NULL) { 
+        printf("Error: Could not open inventory.txt for appending.\n"); 
+        return 1; 
+    } 
+    printf("Enter product name: "); 
+    scanf("%49s", product); 
+    printf("Enter quantity: "); 
+    scanf("%d", &quantity); 
+    fprintf(fptr, "Product: %s | Quantity: %d\n", product, quantity); 
+    fclose(fptr); 
+    printf("Entry added to inventory.txt\n"); 
+    fptr = fopen("inventory.txt", "r"); 
+    if (fptr == NULL) { 
+        printf("Error: Could not open inventory.txt for reading.\n"); 
+        return 1; 
+    } 
+    printf("\n--- Full Inventory ---\n"); 
+    char line[100]; 
+    while (fgets(line, sizeof(line), fptr) != NULL) { 
+        printf("%s", line); 
+    } 
+    fclose(fptr); 
+    return 0; 
+
+}
